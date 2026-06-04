@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/manifest.json",
+      "destination": "/autoshoopa-frontend/public/manifest.json"
+    },
+    {
+      "source": "/static/(.*)",
+      "destination": "/autoshoopa-frontend/public/static/$1"
+    },
+    {
       "source": "/api/(.*)",
       "destination": "/autoshoopa-backend/api/$1"
     }
@@ -11,6 +19,13 @@
     }
   },
   "headers": [
+    {
+      "source": "/manifest.json",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
     {
       "source": "/(.*)\.php",
       "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
