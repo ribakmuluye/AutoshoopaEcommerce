@@ -1,12 +1,15 @@
 {
   "scripts": {
     "preinstall": "npm install --prefix autoshoopa-frontend",
-    "build": "npm --prefix autoshoopa-frontend run build",
-    "start": "npm --prefix autoshoopa-frontend start"
+    "build": "cross-env CI=false npm run build --prefix autoshoopa-frontend",
+    "start": "npm start --prefix autoshoopa-frontend"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "firebase": "^11.9.0",
     "framer-motion": "^12.16.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
