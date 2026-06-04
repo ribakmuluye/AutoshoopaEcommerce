@@ -15,7 +15,7 @@
     }
   ],
   "functions": {
-    "autoshoopa-backend/api/*.php": {
+    "api/*.php": {
       "runtime": "vercel-php@0.5.3"
     }
   },
