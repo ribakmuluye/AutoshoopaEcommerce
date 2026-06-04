@@ -1,3 +1,19 @@
 {
-  "outputDirectory": "autoshoopa-frontend/build"
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/autoshoopa-backend/api/$1"
+    }
+  ],
+  "functions": {
+    "autoshoopa-backend/api/**/*.php": {
+      "runtime": "vercel-php@0.5.3"
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)\.php",
+      "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+    }
+  ]
 }
