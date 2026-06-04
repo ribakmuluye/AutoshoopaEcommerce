@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "build": "npm --prefix autoshoopa-frontend run build",
+    "start": "npm --prefix autoshoopa-frontend run start"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "firebase": "^11.9.0",

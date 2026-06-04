@@ -118,17 +118,17 @@ const Hero = () => {
           >
             {/* Image Card */}
             <div className="relative w-full max-w-3xl mx-auto mt-12 lg:mt-8">
-              <motion.img
-                src="/images/hero/home_backgroundimage.png"
-                alt="Auto spare parts"
-                className="relative z-10 w-full h-auto object-contain drop-shadow-2xl scale-[1.4] lg:scale-[1.8] origin-center"
-                animate={{ y: [0, -15, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.style.display = 'none';
-                }}
-              />
+                <motion.img
+                  src="/images/hero/home_backgroundimage.png"
+                  alt="Auto spare parts"
+                  className="relative z-10 w-full h-auto object-contain drop-shadow-2xl scale-[1.6] lg:scale-[2.0] origin-center"
+                  animate={{ x: [-200, 0], y: [0, -15, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.style.display = 'none';
+                  }}
+                />
             </div>
 
             {/* Floating Stats Cards */}
