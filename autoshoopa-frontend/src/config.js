@@ -1,5 +1,6 @@
 // API Configuration
-export const API_BASE_URL = 'http://localhost/Autoshoopa_website/autoshoopa-backend';
+export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || '';
+
 
 // Site base URL (for uploaded assets like product images)
 export const SITE_BASE_URL = 'http://localhost/Autoshoopa_website';
