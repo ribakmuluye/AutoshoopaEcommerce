@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "build": "npm --prefix autoshoopa-frontend run build",
-    "start": "npm --prefix autoshoopa-frontend run start"
+    "preinstall": "npm install --prefix autoshoopa-frontend",
+    "build": "npm run build --prefix autoshoopa-frontend",
+    "start": "npm start --prefix autoshoopa-frontend"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
