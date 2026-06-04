@@ -1,0 +1,35 @@
+{
+  "short_name": "AutoShoopa",
+  "name": "AutoShoopa - Auto Parts Marketplace",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "images/logo192.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/logo512.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#4F46E5",
+  "background_color": "#ffffff",
+  "description": "Your trusted marketplace for buying and selling vehicles in Ethiopia",
+  "orientation": "portrait",
+  "categories": ["shopping", "automotive", "marketplace"],
+  "screenshots": [
+    {
+      "src": "images/screenshots/home.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ]
+} 

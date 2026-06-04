@@ -1,0 +1,10 @@
+node_modules/
+vendor/
+.env
+uploads/
+autoshoopa-frontend/node_modules/
+autoshoopa-frontend/build/
+autoshoopa-backend/vendor/
+.DS_Store
+.idea/
+.vscode/

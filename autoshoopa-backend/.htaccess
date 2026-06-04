@@ -1,0 +1,25 @@
+RewriteEngine On
+
+# ── Routing ──────────────────────────────────────────────────────────────────
+# All requests (including OPTIONS preflight) pass through to PHP.
+# cors.php handles CORS headers and the OPTIONS 200 exit — do NOT set them
+# here as well, or browsers will see duplicate Access-Control-Allow-Origin.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Protect config files
+<Files "config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Protect all .env files
+<FilesMatch "^\.env">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Enable PHP error display
+php_flag display_errors on
+php_value error_reporting E_ALL
