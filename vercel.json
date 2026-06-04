@@ -1,4 +1,5 @@
 {
+  "outputDirectory": "autoshoopa-frontend/build",
   "rewrites": [
     {
       "source": "/manifest.json",
@@ -27,7 +28,7 @@
       ]
     },
     {
-      "source": "/(.*)\.php",
+      "source": "/(.*)\\.php",
       "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
     }
   ]
