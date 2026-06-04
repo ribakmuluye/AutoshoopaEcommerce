@@ -10,6 +10,7 @@ $allowed_origins = [
     'http://localhost:3000',
     'http://localhost:3001',
     'http://localhost:3002',
+    'https://autoshoopa-ecommerce.vercel.app',
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
