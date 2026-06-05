@@ -1,5 +1,7 @@
 {
+  "name": "autoshoopa-website",
   "outputDirectory": "autoshoopa-frontend/build",
+  "buildCommand": "npm run build"
   "rewrites": [
     {
       "source": "/manifest.json",
