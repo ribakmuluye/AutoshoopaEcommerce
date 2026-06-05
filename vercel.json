@@ -7,10 +7,6 @@
       "config": {
         "distDir": "autoshoopa-frontend/build"
       }
-    },
-    {
-      "src": "api/**/*.php",
-      "use": "@vercel/php"
     }
   ],
   "routes": [
