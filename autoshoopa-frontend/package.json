@@ -37,6 +37,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost/Autoshoopa_website",
   "eslintConfig": {
     "extends": [
       "react-app",
