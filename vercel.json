@@ -9,14 +9,18 @@
       }
     },
     {
-      "src": "autoshoopa-backend/api/**/*.php",
+      "src": "api/**/*.php",
       "use": "@vercel/php"
     }
   ],
   "routes": [
     {
+      "src": "/manifest.json",
+      "dest": "/autoshoopa-frontend/build/manifest.json"
+    },
+    {
       "src": "/api/(.*)",
-      "dest": "/autoshoopa-backend/api/$1"
+      "dest": "/api/$1"
     },
     {
       "src": "/(.*)",
