@@ -61,21 +61,41 @@
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center px-4 py-2.5 border border-light-border dark:border-dark-border text-sm font-semibold rounded-lg text-light-text dark:text-dark-text hover:bg-light-surfaceAlt dark:hover:bg-dark-surfaceAlt active:scale-95 focus:outline-none focus:ring-2 focus:ring-brand-orange-500/20 transition-all duration-200 cursor-pointer;
+    @apply inline-flex items-center justify-center px-4 py-2.5 border border-light-border text-sm font-semibold rounded-lg text-light-text hover:bg-light-surfaceAlt active:scale-95 focus:outline-none focus:ring-2 focus:ring-brand-orange-500/20 transition-all duration-200 cursor-pointer;
+  }
+  html.dark .btn-outline {
+    border-color: var(--border-primary);
+    color: var(--text-primary);
+    background-color: transparent;
+  }
+  html.dark .btn-outline:hover {
+    background-color: var(--bg-surface-alt);
   }
 
   /* Form Inputs */
   .input-field {
-    @apply block w-full rounded-lg border-light-border dark:border-dark-border bg-white dark:bg-dark-surface text-light-text dark:text-dark-text shadow-sm focus:border-brand-orange-500 focus:ring-brand-orange-500/30 sm:text-sm transition-all duration-200;
+    @apply block w-full rounded-lg border-light-border bg-white text-light-text shadow-sm focus:border-brand-orange-500 focus:ring-brand-orange-500/30 sm:text-sm transition-all duration-200;
+  }
+  html.dark .input-field {
+    border-color: var(--border-primary);
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
   }
 
   /* Cards */
   .card {
-    @apply bg-white dark:bg-dark-surface border border-light-border dark:border-dark-border overflow-hidden shadow-sm hover:shadow-md rounded-xl transition-all duration-300;
+    @apply bg-white border border-light-border overflow-hidden shadow-sm hover:shadow-md rounded-xl transition-all duration-300;
+  }
+  html.dark .card {
+    background-color: var(--bg-surface);
+    border-color: var(--border-primary);
   }
 
   .card-header {
-    @apply px-5 py-4 border-b border-light-border dark:border-dark-border;
+    @apply px-5 py-4 border-b border-light-border;
+  }
+  html.dark .card-header {
+    border-color: var(--border-primary);
   }
 
   .card-body {
@@ -83,16 +103,25 @@
   }
 
   .card-footer {
-    @apply px-5 py-4 border-t border-light-border dark:border-dark-border;
+    @apply px-5 py-4 border-t border-light-border;
+  }
+  html.dark .card-footer {
+    border-color: var(--border-primary);
   }
 
   /* Glassmorphism Cards */
   .glass-card {
-    @apply bg-white/70 dark:bg-dark-surface/60 backdrop-blur-xl border border-white/20 dark:border-white/5 rounded-xl shadow-lg;
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 rounded-xl shadow-lg;
+  }
+  html.dark .glass-card {
+    background-color: rgba(26, 26, 36, 0.6);
   }
 
   .glass-card-hover {
-    @apply glass-card hover:bg-white/90 dark:hover:bg-dark-surface/80 hover:border-brand-orange-500/30 hover:shadow-brand-orange-500/10 hover:shadow-xl transition-all duration-300;
+    @apply glass-card hover:bg-white/90 hover:border-brand-orange-500/30 hover:shadow-brand-orange-500/10 hover:shadow-xl transition-all duration-300;
+  }
+  html.dark .glass-card-hover:hover {
+    background-color: rgba(26, 26, 36, 0.8);
   }
 
   /* Category Card */
