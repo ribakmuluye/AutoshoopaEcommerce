@@ -8,3 +8,5 @@ autoshoopa-backend/vendor/
 .DS_Store
 .idea/
 .vscode/
+
+.vercel
