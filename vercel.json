@@ -1,15 +1,6 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "autoshoopa-frontend/build",
-        "buildCommand": "npm run build"
-      }
-    }
-  ],
+  "outputDirectory": "autoshoopa-frontend/build",
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/$1" },
     { "src": "/(.*)", "dest": "/autoshoopa-frontend/build/$1" }
