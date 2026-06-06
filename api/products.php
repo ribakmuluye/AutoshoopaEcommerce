@@ -59,7 +59,30 @@ switch ($method) {
         break;
 
     case 'POST':
-        $payload = requireAuth();
+            // Authentication only for mutating methods
+    switch ($method) {
+        case 'GET':
+            // Public read access – no auth required
+            if ($id) {
+                // existing GET logic remains unchanged
+            } elseif ($sellerId) {
+                // existing seller-specific GET logic
+            } else {
+                // fetch all products
+            }
+            break;
+        case 'POST':
+            $payload = requireAuth();
+            // existing POST logic continues
+            break;
+        case 'PUT':
+            $payload = requireAuth();
+            // existing PUT logic continues
+            break;
+        case 'DELETE':
+            $payload = requireAuth();
+            // existing DELETE logic continues
+            break;
         $data = json_decode(file_get_contents('php://input'), true);
         if (!isset($data['name']) || !isset($data['price'])) {
             http_response_code(400);

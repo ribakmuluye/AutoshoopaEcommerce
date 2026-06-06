@@ -1,7 +1,7 @@
 <?php
 // autoshoopa-backend/api/verify_payment.php
 require_once __DIR__ . '/../config/cors.php';
-require_once __DIR__ . '/../utils/AuthMiddleware.php';
+require_once __DIR__ . '/../autoshoopa-backend/utils/AuthMiddleware.php';
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../utils/Chapa.php';
 require_once __DIR__ . '/../utils/NotificationManager.php';
