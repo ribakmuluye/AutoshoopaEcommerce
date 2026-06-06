@@ -9,13 +9,13 @@ include_once '../../objects/user.php';
 // Get posted data
 $data = json_decode(file_get_contents("php://input"));
 
-// Log the received data
-error_log("Received registration request: " . print_r($data, true));
+// Log the received data for debugging
+error_log('Received registration request: ' . print_r($data, true));
 
 // Validate required fields
 if (!isset($data->name) || !isset($data->email) || !isset($data->password)) {
     http_response_code(400);
-    echo json_encode(array("message" => "Missing required fields"));
+    echo json_encode(["message" => "Missing required fields"]);
     exit();
 }
 
@@ -30,7 +30,7 @@ try {
     // Set user properties
     $user->name = $data->name;
     $user->email = $data->email;
-    $user->password = $data->password;
+    $user->password = password_hash($data->password, PASSWORD_BCRYPT);
     $user->user_type = $data->user_type ?? 'customer';
     $user->phone = $data->phone ?? '';
     $user->business_name = $data->business_name ?? '';
@@ -39,18 +39,17 @@ try {
     // Check if email already exists
     if ($user->emailExists()) {
         http_response_code(400);
-        echo json_encode(array("message" => "Email already exists"));
+        echo json_encode(["message" => "Email already exists"]);
         exit();
     }
 
     // Create the user
     if ($user->create()) {
-        // Log successful registration
-        error_log("User registered successfully: " . $user->email);
-        
-        // Include Auth helper and generate token
+        error_log('User registered successfully: ' . $user->email);
+
+        // Generate JWT token (placeholder implementation)
         require_once '../../utils/Auth.php';
-        $user_data = array(
+        $user_data = [
             "id" => $user->id,
             "name" => $user->name,
             "email" => $user->email,
@@ -58,30 +57,24 @@ try {
             "phone" => $user->phone,
             "business_name" => $user->business_name,
             "business_address" => $user->business_address
-        );
+        ];
         $token = Auth::generateToken($user_data);
 
-        // Create response array
-        $response = array(
+        $response = [
             "message" => "Registration successful",
             "token" => $token,
             "user" => array_merge($user_data, ["token" => $token])
-        );
-
+        ];
         http_response_code(201);
         echo json_encode($response);
     } else {
-        // Log failed registration
-        error_log("Failed to register user: " . $user->email);
-        
+        error_log('Failed to register user: ' . $user->email);
         http_response_code(503);
-        echo json_encode(array("message" => "Unable to register user"));
+        echo json_encode(["message" => "Unable to register user"]);
     }
 } catch (Exception $e) {
-    // Log the error
-    error_log("Registration error: " . $e->getMessage());
-    
+    error_log('Registration error: ' . $e->getMessage());
     http_response_code(500);
-    echo json_encode(array("message" => "Internal server error"));
+    echo json_encode(["message" => "Internal server error"]);
 }
-?> 
+?>

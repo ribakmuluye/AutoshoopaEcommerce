@@ -5,7 +5,8 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "autoshoopa-frontend/build"
+        "distDir": "autoshoopa-frontend/build",
+        "buildCommand": "npm run build"
       }
     }
   ],
@@ -40,5 +41,23 @@
         { "key": "Access-Control-Allow-Headers", "value": "Content-Type,Authorization" }
       ]
     }
-  ]
+  ],
+  "functions": {
+    "api/**/*.php": {
+      "runtime": "vercel-php@0.9.0"
+    }
+  },
+  "env": {
+    "MONGODB_URI": "mongodb+srv://admin_autoshoopa:Autoshoopa2026@cluster0.febiieb.mongodb.net/?appName=Cluster0",
+    "MONGODB_DB": "autoshoopa",
+    "JWT_SECRET": "a3F9bG8hJkL0mN2pQrS5tUvWxYz1cD4eF6gH7iJ9kL0mNpQrStUv",
+    "JWT_EXPIRE": "3600",
+    "SMTP_HOST": "smtp.gmail.com",
+    "SMTP_PORT": "587",
+    "SMTP_EMAIL": "rebekamuluye@gmail.com",
+    "SMTP_PASSWORD": "YOUR_APP_PASSWORD_HERE",
+    "SMTP_FROM_NAME": "AutoShoopa",
+    "CHAPA_PUBLIC_KEY": "CHAPUBK_TEST-xxxxxxxxxxxxxxxxxxxxxxxx",
+    "CHAPA_SECRET_KEY": "CHASECK_TEST-xxxxxxxxxxxxxxxxxxxxxxxx"
+  }
 }
