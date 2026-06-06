@@ -1,7 +1,7 @@
 <?php
 // autoshoopa-backend/api/products.php
 require_once __DIR__ . '/../config/cors.php';      // CORS headers + OPTIONS preflight
-require_once __DIR__ . '/../utils/AuthMiddleware.php';
+require_once __DIR__ . '/../autoshoopa-backend/utils/AuthMiddleware.php';
 require_once __DIR__ . '/../config/database.php';
 
 try {

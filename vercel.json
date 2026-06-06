@@ -1,5 +1,6 @@
 {
-  "version": 2,
+  "name": "autoshoopa-website",
+
   "builds": [
     {
       "src": "package.json",
@@ -12,10 +13,6 @@
   ],
   "routes": [
     {
-      "src": "/manifest.json",
-      "dest": "/autoshoopa-frontend/build/manifest.json"
-    },
-    {
       "src": "/api/(.*)",
       "dest": "/api/$1"
     },
@@ -25,13 +22,6 @@
     }
   ],
   "headers": [
-    {
-      "source": "/manifest.json",
-      "headers": [
-        { "key": "Cache-Control", "value": "no-cache" },
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
-      ]
-    },
     {
       "source": "/api/(.*)",
       "headers": [
